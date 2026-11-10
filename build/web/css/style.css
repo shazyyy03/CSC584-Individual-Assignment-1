@@ -1,0 +1,466 @@
+/* ==============================
+   GENERAL SETTINGS
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eee9f2;
+}
+
+/* ==============================
+   FORM PAGE
+   ============================== */
+
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+/* Left image section */
+
+.welcome-panel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 30px;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(60, 25, 80, 0.25),
+            rgba(60, 25, 80, 0.25)
+        ),
+        url("/PERSONAL_PROFILE_APP/background/profile-background.png");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Hide the previous decorative circles */
+
+.welcome-panel::before,
+.welcome-panel::after {
+    display: none;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 300px;
+    padding: 25px 30px;
+
+    background-color: rgba(45, 16, 60, 0.40);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.welcome-panel h1 {
+    margin: 0 0 14px;
+    color: #ffffff;
+    font-size: 36px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+.welcome-panel p {
+    max-width: 270px;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.7;
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.65);
+}
+
+/* Right form section */
+
+.form-panel {
+    display: flex;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 70px 170px;
+    background-color: #ffffff;
+}
+
+.form-panel form {
+    width: 100%;
+}
+
+.form-heading {
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.form-heading h2 {
+    margin: 0 0 8px;
+    color: #5b2c83;
+    font-size: 28px;
+}
+
+.form-heading p {
+    margin: 0;
+    color: #807087;
+    font-size: 14px;
+}
+
+/* Form fields */
+
+.form-group {
+    width: 100%;
+    margin-bottom: 9px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 4px;
+    color: #4b3455;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 8px 15px;
+    color: #32203b;
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #faf8fb;
+    border: 1px solid #cfbfd8;
+    border-radius: 22px;
+    outline: none;
+}
+
+.form-group input {
+    height: 35px;
+}
+
+.form-group textarea {
+    height: 58px;
+    min-height: 58px;
+    border-radius: 14px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background-color: #ffffff;
+    border-color: #7b439d;
+    box-shadow: 0 0 0 3px rgba(123, 67, 157, 0.13);
+}
+
+/* Submit button */
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    height: 38px;
+    margin-top: 12px;
+    padding: 0 20px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    background: linear-gradient(
+        90deg,
+        #54236b,
+        #823d91
+    );
+    border: none;
+    border-radius: 23px;
+    box-shadow: 0 7px 17px rgba(91, 44, 131, 0.25);
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(
+        90deg,
+        #3d184f,
+        #692b78
+    );
+    transform: translateY(-2px);
+}
+
+/* ==============================
+   PROFILE RESULT PAGE
+   ============================== */
+
+.result-page {
+    min-height: 100vh;
+}
+
+.result-layout {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+/* Left image section */
+
+.result-welcome {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 40px;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(60, 25, 80, 0.25),
+            rgba(60, 25, 80, 0.25)
+        ),
+        url("/PERSONAL_PROFILE_APP/background/profile-background.png");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Hide decorative circles */
+
+.result-welcome::before,
+.result-welcome::after {
+    display: none;
+}
+
+.result-welcome-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 300px;
+    padding: 25px 30px;
+
+    background-color: rgba(45, 16, 60, 0.40);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.result-welcome h1 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 32px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+.result-welcome p {
+    max-width: 280px;
+    margin: auto;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.6;
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.65);
+}
+
+/* Right result section */
+
+.result-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 70px 170px;
+    background-color: #ffffff;
+}
+
+.result-content {
+    width: 100%;
+    max-width: 540px;
+}
+
+.result-content h2 {
+    margin: 0 0 5px;
+    color: #5b2c83;
+    font-size: 28px;
+    text-align: center;
+}
+
+.result-subtitle {
+    margin: 0 0 18px;
+    color: #807087;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Submitted information */
+
+.result-item {
+    display: grid;
+    grid-template-columns: 115px 1fr;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    background-color: #faf8fb;
+    border: 1px solid #e1d5e7;
+    border-left: 4px solid #713181;
+    border-radius: 9px;
+}
+
+.result-item strong {
+    color: #5b2c83;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.result-item span {
+    color: #38263f;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.bio-result {
+    align-items: start;
+}
+
+.bio-result span {
+    white-space: pre-wrap;
+}
+
+/* Back button */
+
+.result-back-button {
+    display: block;
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px 20px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(
+        90deg,
+        #54236b,
+        #823d91
+    );
+    border-radius: 22px;
+    box-shadow: 0 6px 14px rgba(91, 44, 131, 0.23);
+}
+
+.result-back-button:hover {
+    background: linear-gradient(
+        90deg,
+        #3d184f,
+        #692b78
+    );
+}
+
+/* ==============================
+   TABLET
+   ============================== */
+
+@media (max-width: 800px) {
+    .profile-layout,
+    .result-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-panel,
+    .result-welcome {
+        min-height: 300px;
+        padding: 35px 25px;
+    }
+
+    .profile-icon,
+    .result-icon {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 16px;
+        font-size: 32px;
+    }
+
+    .welcome-panel h1,
+    .result-welcome h1 {
+        font-size: 28px;
+    }
+
+    .form-panel {
+        min-height: auto;
+        padding: 38px 35px;
+    }
+
+    .result-panel {
+        min-height: auto;
+        padding: 35px 25px;
+    }
+}
+
+/* ==============================
+   PHONE
+   ============================== */
+
+@media (max-width: 500px) {
+    .page-container {
+        padding: 0;
+    }
+
+    .form-panel {
+        padding: 32px 22px;
+    }
+
+    .form-heading h2,
+    .result-content h2 {
+        font-size: 24px;
+    }
+
+    .result-item {
+        display: block;
+    }
+
+    .result-item strong {
+        display: block;
+        margin-bottom: 6px;
+    }
+}
